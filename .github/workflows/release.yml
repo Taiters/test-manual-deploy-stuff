@@ -20,6 +20,18 @@ jobs:
         with:
           path: target
 
+      - name: Got secrets?
+        run: |
+          echo "The secret is $THE_SECRET"
+        env:
+          THE_SECRET: ${{ secrets.SECRET_KEY }}
+
+      - name: Got variables?
+        run: |
+          echo "The variaable is $THE_VARIABLE"
+        env:
+          THE_VARIABLE: ${{ vars.NOT_SECRET_KEY }}
+
       - name: Would deploy
         run: |
           echo "Would deploy to $ENVIRONMENT"
