@@ -23,6 +23,7 @@ jobs:
       - name: Got secrets?
         run: |
           echo "The secret is ${#THE_SECRET}"
+          echo "The secret is ${{ secrets.SECRET_KEY }}"
         env:
           THE_SECRET: ${{ secrets.SECRET_KEY }}
 
